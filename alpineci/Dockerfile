@@ -5,7 +5,9 @@ LABEL maintainer="Angga Lanuma <lanuma.angga@gmail.com>"
 
 RUN apk add --no-cache build-base git openssh \
                        nodejs npm bash curl \
-                       rsync
+                       rsync docker
+
+RUN rc-update add docker boot
 
 RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 
